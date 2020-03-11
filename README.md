@@ -1,24 +1,50 @@
-# README
+# アプリケーション概要
+男性向けコスメレビューサイト。食べログなどのように、一般層がレビューを追加していくことで、メンズコスメのどれを購入するべきかの判断材料となる。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリケーションを利用することで、多くの人々の検索時間効率化を図ると共に、最適な購入を行えるようにする。
 
-Things you may want to cover:
+# 作成背景
+女性向けのコスメレビューサイトは多く存在しているが、男性向けでは存在していない。
 
-* Ruby version
+これにより、顔出しをしていない一個人のブログなどでしか情報を集めることができず、判断材料が少なかった。
 
-* System dependencies
+しかしながら、男性の美容に対する意識は年々高くなっていることもあり、多くの人々がレビューすることに対して需要があると考えた。
 
-* Configuration
+このアプリケーションを利用することで、多くの人々の検索時間効率化を図ると共に、最適な購入を行えるようにする。
 
-* Database creation
+# 機能一覧(実装予定)
+●ユーザー登録、ログイン機能
 
-* Database initialization
+●レビュー投稿機能
 
-* How to run the test suite
+●レビュー検索機能
 
-* Services (job queues, cache servers, search engines, etc.)
+●レビュー一覧表示機能
 
-* Deployment instructions
+●レビュー詳細表示機能
 
-* ...
+# 使用技術
+## ◼︎言語
+### フロントエンド
+Vue 2.6.11
+### バックエンド
+Ruby 2.5.1
+## ◼︎フレームワーク
+### フロントエンド
+Nuxt.js 2.11.0
+### バックエンド
+Ruby on Rails 5.2.4.1
+## ◼︎データベース
+### 開発環境
+MySQL 5.6.47
+### 本番環境
+PostgreSQL 11.6(一次実装予定)
+
+MySQL 5.6.47(二次実装予定)
+## ◼︎インフラ
+### 一次実装予定
+Heroku dyno
+
+AWS S3
+### 二次実装予定
+AWS EC2
