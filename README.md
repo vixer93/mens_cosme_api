@@ -38,10 +38,8 @@ Ruby on Rails 5.2.4.1
 ### 開発環境
 MySQL 5.6.47
 ### 本番環境
-### 一次実装予定
-PostgreSQL 11.6
-### 二次実装予定
-MySQL 5.6.47
+PostgreSQL 11.6(一次実装予定)
+MySQL 5.6.47(二次実装予定)
 ## ◼︎インフラ
 ### 一次実装予定
 Heroku dyno
