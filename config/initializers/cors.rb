@@ -1,6 +1,10 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
+    if Rails.env.production?
+      origins 'https://menz-cosme-review.firebaseapp.com/'
+    else
+      origin 'http://localhost:3000/'
+    end
 
     resource '*',
       headers: :any,
