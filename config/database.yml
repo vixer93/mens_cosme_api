@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: mens_cosme_api_production
-  username: mens_cosme_api
-  password: <%= ENV['MENS_COSME_API_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
