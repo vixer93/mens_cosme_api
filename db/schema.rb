@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_03_20_124022) do
     t.string "name", null: false
     t.string "brand", null: false
     t.integer "price", null: false
-    t.integer "point", default: 0, null: false
+    t.integer "point", default: 0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

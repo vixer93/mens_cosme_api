@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string     :name,  null: false
       t.string     :brand, null: false
       t.integer    :price, null: false
-      t.integer    :point, null: false, default: 0
+      t.integer    :point, default: 0
       t.references :user, foreign_key: true
       t.timestamps
     end
