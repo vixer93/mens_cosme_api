@@ -1,4 +1,9 @@
 class ProductsController < ApplicationController
+  def index
+    @products = Product.all.includes(:images)
+    render 'index', formats: 'json', handlers: 'jbuilder'
+  end
+
   def create
     @product = Product.new(product_params)
     if @product.save
