@@ -7,7 +7,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     #   # origins 'http://localhost:3000'
     #   origins 'https://menz-cosme-review.firebaseapp.com/'
     # end
-    origins 'https://menz-cosme-review.firebaseapp.com/'
+    origins 'https://menz-cosme-review.firebaseapp.com'
 
     resource '*',
       headers: :any,
