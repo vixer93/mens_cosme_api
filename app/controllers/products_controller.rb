@@ -4,6 +4,11 @@ class ProductsController < ApplicationController
     render :index, formats: 'json', handlers: 'jbuilder'
   end
 
+  def show
+    @product = Product.find(params[:id])
+    render :show, formats: 'json', handlers: 'jbuilder'
+  end
+
   def create
     @product = Product.new(product_params)
     if @product.save
