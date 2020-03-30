@@ -1,7 +1,7 @@
 json.id    @product.id
 json.images do
   json.array! @product.images do |image|
-    json.image image.name.url
+    json.url image.name.url
   end
 end
 json.name  @product.name
