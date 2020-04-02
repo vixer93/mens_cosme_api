@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_143459) do
+ActiveRecord::Schema.define(version: 2020_04_02_091311) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_04_01_143459) do
     t.string "name", null: false
     t.string "brand", null: false
     t.integer "price", null: false
-    t.integer "point", default: 0
+    t.float "point", default: 0.0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
