@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+  def index
+    @reviews = Review.where(product_id: params[:product_id])
+    render json: @reviews
+  end
+
   def create
     @review = Review.new(review_params)
     if @review.save
