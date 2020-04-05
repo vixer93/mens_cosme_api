@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.6.47
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - "4306:3306"
+
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 5000 -b '0.0.0.0'"
+    volumes:
+      - .:/mens_cosme_api
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
