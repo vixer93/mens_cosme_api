@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.where(product_id: params[:product_id])
-    render json: @reviews
+    @reviews = Review.where(product_id: params[:product_id]).order("id DESC")
+    render :index, formats: 'json', handlers: 'jbuilder'
   end
 
   def create
@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     if @review.save
       product_point = Review.calculate_average_point(@review.product.id)
       @review.product.update(point: product_point)
-      render json: @review
+      render :create, formats: 'json', handlers: 'jbuilder'
     else
       render json: @review.errors.full_messages
     end
