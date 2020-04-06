@@ -9,12 +9,31 @@ services:
     ports:
       - "4306:3306"
 
-  web:
+  app:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 5000 -b '0.0.0.0'"
     volumes:
       - .:/mens_cosme_api
+      - public-data:/mens_cosme_api/public
+      - tmp-data:/mens_cosme_api/tmp
+      - log-data:/mens_cosme_api/log
     ports:
       - "5000:5000"
     depends_on:
       - db
+
+  web:
+    build: ./docker/nginx
+    volumes:
+      - public-data:/mens_cosme_api/public
+      - tmp-data:/mens_cosme_api/tmp
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+
+volumes:
+  public-data:
+  tmp-data:
+  log-data:
+  db-data:
