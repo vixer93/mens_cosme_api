@@ -1,16 +1,10 @@
 version: '3'
 services:
-  db:
-    image: mysql:5.6.47
-    environment:
-      - ./docker/mysql/environments/db.env
-    volumes:
-      - ./docker/mysql/volumes:/var/lib/mysql
-    ports:
-      - "4306:3306"
 
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: "Dockerfile_production"
     command: bundle exec puma -C config/puma.rb
     volumes:
       - .:/mens_cosme_api
@@ -19,11 +13,11 @@ services:
       - log-data:/mens_cosme_api/log
     ports:
       - "5000:5000"
-    depends_on:
-      - db
 
   web:
-    build: ./docker/nginx
+    build:
+      context: ./docker/nginx
+      dockerfile: "Dockerfile_production"
     volumes:
       - public-data:/mens_cosme_api/public
       - tmp-data:/mens_cosme_api/tmp
