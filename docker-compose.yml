@@ -17,6 +17,7 @@ services:
       - public-data:/mens_cosme_api/public
       - tmp-data:/mens_cosme_api/tmp
       - log-data:/mens_cosme_api/log
+      - gem_data:/usr/local/bundle
     ports:
       - "5000:5000"
     depends_on:
@@ -37,3 +38,4 @@ volumes:
   tmp-data:
   log-data:
   db-data:
+  gem_data:
