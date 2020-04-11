@@ -42,4 +42,4 @@ MySQL 5.6.48
 ## ◼︎構築ツール
 Docker
 ## ◼︎インフラ
-AWS:EC2,RDS,S3,Route53,ELB,ACM
+AWS:VPC,EC2,RDS,S3,Route53,ELB,ACM
