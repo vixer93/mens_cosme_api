@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules.
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
           # :confirmable, :omniauthable
@@ -8,4 +7,8 @@ class User < ApplicationRecord
   has_many :reviews
 
   validates :name, :email, presence: true
+
+  def token_validation_response
+   as_json(only: [:id, :uid, :allow_password_change, :name])
+  end
 end
