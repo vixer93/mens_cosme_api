@@ -28,7 +28,7 @@
 ### フロントエンド
 Vue 2.6.11
 ### バックエンド
-Ruby 2.5.1
+Ruby 2.5.8
 ## ◼︎フレームワーク
 ### フロントエンド
 Nuxt.js 2.11.0
@@ -38,13 +38,8 @@ Ruby on Rails 5.2.4.1
 ### 開発環境
 MySQL 5.6.47
 ### 本番環境
-PostgreSQL 11.6(一次実装予定)
-
-MySQL 5.6.47(二次実装予定)
+MySQL 5.6.48
+## ◼︎構築ツール
+Docker
 ## ◼︎インフラ
-### 一次実装予定
-Heroku dyno
-
-AWS S3
-### 二次実装予定
-AWS EC2
+AWS:EC2,RDS,S3,Route53,ELB,ACM
