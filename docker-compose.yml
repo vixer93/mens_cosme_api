@@ -28,7 +28,7 @@ services:
       - public-data:/mens_cosme_api/public
       - tmp-data:/mens_cosme_api/tmp
     ports:
-      - "80:80"
+      - "7000:80"
     depends_on:
       - app
 
