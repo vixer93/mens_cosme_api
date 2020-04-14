@@ -4,14 +4,15 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     #   origins 'https://menz-cosme-review.firebaseapp.com/'
     #   # origins 'http://localhost:3000'
     # else
-    #   # origins 'http://localhost:3000'
+    origins 'localhost'
     #   origins 'https://menz-cosme-review.firebaseapp.com/'
     # end
-    origins '*'
+    # origins '*'
 
     resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head],
-      expose:  ['access-token', 'client', 'uid']
+      expose:  ['access-token', 'client', 'uid'],
+      credentials: true
   end
 end
