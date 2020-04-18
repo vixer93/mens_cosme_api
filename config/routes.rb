@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show, :create] do
     resources :reviews, only: [:index, :create]
   end
+  resources :product_categories, only: [:index, :show]
 end

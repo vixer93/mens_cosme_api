@@ -1,9 +1,10 @@
 json.set! :product do
-  json.id    @product.id
-  json.name  @product.name
-  json.brand @product.brand
-  json.price @product.price
-  json.point @product.point
+  json.id       @product.id
+  json.name     @product.name
+  json.brand    @product.brand
+  json.price    @product.price
+  json.point    @product.point
+  json.category @product.category.name
   json.images do
     json.array! @product.images do |image|
       json.url image.name.url
