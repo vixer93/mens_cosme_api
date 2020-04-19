@@ -1,0 +1,4 @@
+1 .envファイルをコピーする
+2 master.keyファイルをコピーする
+3 docker-compose -f docker-compose-production.yml build --no-cache を行う
+3 rails db:migrateなどを実行する
