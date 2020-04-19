@@ -8,7 +8,7 @@ module Overrides
 
     def render_create_success
       render json: {
-        data: {id: @resource.id, name: @resource, uid: @resource.uid, tokens: @resource.tokens}
+        data: {id: @resource.id, name: @resource.name, uid: @resource.uid, tokens: @resource.tokens}
       }
     end
   end
