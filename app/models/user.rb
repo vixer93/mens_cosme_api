@@ -5,6 +5,7 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
   has_many :products
   has_many :reviews
+  has_many :favorites, dependent: :delete_all
 
   validates :name, :email, presence: true
 

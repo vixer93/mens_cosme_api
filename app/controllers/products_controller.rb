@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   def index
     @products = Product.all.includes(:images).order("id DESC")
     render :index, formats: 'json', handlers: 'jbuilder'

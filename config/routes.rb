@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   }
   resources :users,    only: [:index, :create]
   resources :products, only: [:index, :show, :create] do
-    resources :reviews, only: [:index, :create]
+    resources :reviews,   only: [:index, :create]
+    resource  :favorites, only: [:create, :destroy]
   end
   resources :product_categories, only: [:index, :show]
 end

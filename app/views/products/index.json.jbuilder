@@ -6,4 +6,5 @@ json.array! @products do |product|
   json.price    product.price
   json.point    product.point
   json.category product.category.name
+  json.favorite product.is_favorite?(current_user)
 end

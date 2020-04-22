@@ -5,6 +5,7 @@ json.set! :product do
   json.price    @product.price
   json.point    @product.point
   json.category @product.category.name
+  json.favorite @product.is_favorite?(current_user)
   json.images do
     json.array! @product.images do |image|
       json.url image.name.url
