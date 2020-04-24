@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def index
     @reviews = Review.where(product_id: params[:product_id]).order("id DESC")
     render :index, formats: 'json', handlers: 'jbuilder'
@@ -18,7 +20,8 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:title, :point, :content, :user_id).merge(product_id: params[:product_id])
+    params.require(:review).permit(:title, :point, :content)
+                           .merge(user_id: current_user.id, product_id: params[:product_id])
   end
 
 end
