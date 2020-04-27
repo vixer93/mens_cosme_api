@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     sessions: 'overrides/sessions'
   }
 
-  resources :users,    only: [:index, :create]
+  resources :users,    only: [:show]
   resources :products, only: [:index, :show, :create] do
     resources :reviews,   only: [:index, :create]
     resource  :favorites, only: [:create, :destroy]
